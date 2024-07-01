@@ -42,6 +42,12 @@
 <button (click)="sayHello()">Hazme click</button>
 
 <h1>Desde app.component</h1>
+
+<form (submit)="addUser(newUser)">
+    <input type="text" #newUser>
+    <button>Agregar Usuario</button>
+</form>
+
 <ul>
     @for (user of users; track $index) {
         <li>
