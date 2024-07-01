@@ -14,6 +14,10 @@ export class AppComponent {
     users = ['ryan', 'joe', 'cameron', 'john'];
     actividad = false;
 
+    sayHello() {
+        alert("Hola desde app.component");
+    }
+
     title = 'my-dream-app';
     name : string;
     email : string;
