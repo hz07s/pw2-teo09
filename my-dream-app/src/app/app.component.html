@@ -31,3 +31,10 @@
 <div class="black">
     <h1>{{ title }}</h1>
 </div>
+<ul >
+    @for (user of users; track $index) {
+        <li>
+            <app-user [nameUser]="user"></app-user>
+        </li>
+    }
+</ul>

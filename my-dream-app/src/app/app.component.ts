@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HelloWorldComponent } from "./hello-world/hello-world.component";
+import { UserComponent } from './user/user.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent]
+    imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent, UserComponent]
 })
 export class AppComponent {
+    users = ['ryan', 'joe', 'cameron', 'john'];
+    actividad = false;
+
     title = 'my-dream-app';
     name : string;
     email : string;
