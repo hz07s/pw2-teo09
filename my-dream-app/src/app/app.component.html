@@ -40,3 +40,12 @@
 </ul>
 
 <button (click)="sayHello()">Hazme click</button>
+
+<h1>Desde app.component</h1>
+<ul>
+    @for (user of users; track $index) {
+        <li>
+            {{user}} <button (click)="deleteUser(user)">Borrar Usuario</button>
+        </li>
+    }
+</ul>
