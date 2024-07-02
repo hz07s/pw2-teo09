@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+<router-outlet>
 <div class="black">
     <h1>{{ title }}</h1>
 </div>
@@ -55,3 +55,19 @@
         </li>
     }
 </ul>
+
+<div>
+    <p>FORMULARIO:</p>
+    <form>
+        <input type="text" name="name" [(ngModel)]="name">
+        <input type="text" name="age" [(ngModel)]="age">
+        
+        <h2>Name: {{ name }} </h2>
+        <h2>Age: {{ age }} </h2>
+    </form>
+    <!-- <h4>Data-Binding:</h4>
+    <input type="text" [(ngModel)]="name">
+    <input type="text" [(ngModel)]="age">
+    <p>{{ name }} - {{ age }}</p> -->
+</div>
+

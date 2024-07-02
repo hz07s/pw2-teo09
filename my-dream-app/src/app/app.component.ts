@@ -2,15 +2,23 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HelloWorldComponent } from "./hello-world/hello-world.component";
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+//import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent, UserComponent]
+    imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent,
+        UserComponent, FormsModule]
 })
 export class AppComponent {
+    name : string = "Hernan Andy";
+    age : number = 18;
+    username: string = "";
+
     users = ['ryan', 'joe', 'cameron', 'john'];
     actividad = false;
 
@@ -34,7 +42,7 @@ export class AppComponent {
     }
 
     title = 'my-dream-app';
-    name : string;
+    //name : string;
     email : string;
     webpage :string;
     hobbies : string[];
