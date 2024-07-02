@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { DataService } from './data.service';
 import { HttpClient } from '@angular/common/http';
+import { Post } from './Post';
+import { HttpClientAppModule } from './http-client-app-module';
 //import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,13 +25,15 @@ import { HttpClient } from '@angular/common/http';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent,
-        UserComponent, FormsModule]
+        UserComponent, FormsModule, HttpClientAppModule]
 })
 export class AppComponent {
     posts: any[] = []
     constructor(private http: HttpClient) {
-        this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts').subscribe(posts => {
-            console.log(posts);
+        this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+      .subscribe(posts => {
+        this.posts = posts;
+        console.log(posts)
         });
     }
 

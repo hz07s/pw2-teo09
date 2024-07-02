@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { DataService } from './data.service';
     BrowserModule,
     CommonModule,
     FormsModule,
-    HttpClientModule,
+    // HttpClientModule,
   ],
   providers: [DataService],
   bootstrap: []

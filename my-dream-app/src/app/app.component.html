@@ -70,3 +70,12 @@
     <input type="text" [(ngModel)]="age">
     <p>{{ name }} - {{ age }}</p> -->
 
+<div class="black">
+    <!-- <h1> {{ title }} </h1> -->
+</div>
+<div class="ash">
+    @for (post of posts; track $index) {
+        <h2>{{ post.title }}</h2>
+        <h3>{{ post.body }}</h3>
+    }
+</div>
