@@ -10,6 +10,7 @@ import { Post } from './Post';
 import { HttpClientAppModule } from './http-client-app-module';
 import { AboutComponent } from './about/about.component';
 //import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -26,7 +27,7 @@ import { AboutComponent } from './about/about.component';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent,
-        UserComponent, FormsModule, HttpClientAppModule,]
+        UserComponent, FormsModule, HttpClientAppModule, RouterLink]
 })
 export class AppComponent {
     // posts: any[] = []
