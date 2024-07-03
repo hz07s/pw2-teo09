@@ -8,6 +8,7 @@ import { DataService } from './data.service';
 import { HttpClient } from '@angular/common/http';
 import { Post } from './Post';
 import { HttpClientAppModule } from './http-client-app-module';
+import { AboutComponent } from './about/about.component';
 //import { CommonModule } from '@angular/common';
 
 @Component({
@@ -25,68 +26,68 @@ import { HttpClientAppModule } from './http-client-app-module';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, HelloWorldComponent, HelloWorldComponent,
-        UserComponent, FormsModule, HttpClientAppModule]
+        UserComponent, FormsModule, HttpClientAppModule,]
 })
 export class AppComponent {
-    posts: any[] = []
-    constructor(private http: HttpClient) {
-        this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => {
-        this.posts = posts;
-        console.log(posts)
-        });
+    // posts: any[] = []
+    // constructor(private http: HttpClient) {
+    //     this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts')
+    //   .subscribe(posts => {
+    //     this.posts = posts;
+    //     console.log(posts)
+    //     });
+    // }
+
+
+    name : string = "Hernan Andy";
+    age : number = 18;
+    username: string = "";
+
+    users = ['ryan', 'joe', 'cameron', 'john'];
+    actividad = false;
+
+    sayHello() {
+        alert("Hola desde app.component");
     }
 
+    deleteUser(user : any) {
+        for (let i=0; i<this.users.length; i++) {
+            if (user == this.users[i]){
+                this.users.splice(i,1);
+            }
+        }
+    }
 
-    // name : string = "Hernan Andy";
-    // age : number = 18;
-    // username: string = "";
+    addUser(newUser : any) {
+        this.users.push(newUser.value);
+        newUser.value = '';
+        newUser.focus();
+        return false;
+    }
 
-    // users = ['ryan', 'joe', 'cameron', 'john'];
-    // actividad = false;
+    title = 'my-dream-app';
+    // name : string;
+    email : string;
+    webpage :string;
+    hobbies : string[];
+    showHobbies : boolean;
 
-    // sayHello() {
-    //     alert("Hola desde app.component");
-    // }
+    constructor() {
+        console.log("Constructor is working...");
+        this.name = "Hernan Andy";
+        this.email = "hchoquehuancaz@unsa.edu.pe";
+        this.webpage = "http://www.unsa.edu.pe";
+        this.hobbies = ["Futbol", "Programacion", "Ajedrez"];
+        this.showHobbies = false;
+    }
 
-    // deleteUser(user : any) {
-    //     for (let i=0; i<this.users.length; i++) {
-    //         if (user == this.users[i]){
-    //             this.users.splice(i,1);
-    //         }
-    //     }
-    // }
+    toggleHobbies() {
+        this.showHobbies = !this.showHobbies;
+    }
 
-    // addUser(newUser : any) {
-    //     this.users.push(newUser.value);
-    //     newUser.value = '';
-    //     newUser.focus();
-    //     return false;
-    // }
-
-    // title = 'my-dream-app';
-    //name : string;
-    // email : string;
-    // webpage :string;
-    // hobbies : string[];
-    // showHobbies : boolean;
-
-    // constructor() {
-    //     console.log("Constructor is working...");
-    //     this.name = "Hernan Andy";
-    //     this.email = "hchoquehuancaz@unsa.edu.pe";
-    //     this.webpage = "http://www.unsa.edu.pe";
-    //     this.hobbies = ["Futbol", "Programacion", "Ajedrez"];
-    //     this.showHobbies = false;
-    // }
-
-    // toggleHobbies() {
-    //     this.showHobbies = !this.showHobbies;
-    // }
-
-    // newHobby(hobby: any)  {
-    //     this.hobbies.push(hobby.value);
-    //     hobby.value = "";
-    //     return false;
-    // }
+    newHobby(hobby: any)  {
+        this.hobbies.push(hobby.value);
+        hobby.value = "";
+        return false;
+    }
 }

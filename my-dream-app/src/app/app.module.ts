@@ -1,19 +1,22 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-// import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
+// import { NgModule } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule } from '@angular/forms';
+// import { BrowserModule } from '@angular/platform-browser';
+// import { DataService } from './data.service';
+// import { AppComponent } from './app.component';
 
-@NgModule({
-  declarations: [],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    // HttpClientModule,
-  ],
-  providers: [DataService],
-  bootstrap: []
-})
-export class AppModule { }
+
+// @NgModule({
+//   declarations: [
+    
+//   ],
+//   imports: [
+//     BrowserModule,
+//     CommonModule,
+//     FormsModule,
+//     AppComponent,
+//   ],
+//   providers: [DataService],
+//   bootstrap: []
+// })
+// export class AppModule { }
